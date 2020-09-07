@@ -69,6 +69,8 @@ public class Course implements Serializable {
 
 	public void setCourse_description(String course_description) {
 		this.course_description = course_description;
+		this.course_description = course_description;
+
 	}
 	
 	
