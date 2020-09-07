@@ -27,6 +27,18 @@ public class Course implements Serializable {
 	private Set<Level> levelList;
 	 
 	
+	public Set<Level> getLevelList() {
+		return levelList;
+	}
+
+
+
+	public void setLevelList(Set<Level> levelList) {
+		this.levelList = levelList;
+	}
+
+
+
 	public Course() {}
 
 	

@@ -19,8 +19,6 @@ public class Student_enrolment implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long enrolment_id;
-	private String student_id;
-	private String level_id;
 	private Date start_date;
 	private Date end_date;
 	
@@ -42,18 +40,7 @@ public class Student_enrolment implements Serializable {
 	public void setEnrolment_id(Long enrolment_id) {
 		this.enrolment_id = enrolment_id;
 	}
-	public String getStudent_id() {
-		return student_id;
-	}
-	public void setStudent_id(String student_id) {
-		this.student_id = student_id;
-	}
-	public String getLevel_id() {
-		return level_id;
-	}
-	public void setLevel_id(String level_id) {
-		this.level_id = level_id;
-	}
+	
 	public Date getStart_date() {
 		return start_date;
 	}
@@ -65,6 +52,18 @@ public class Student_enrolment implements Serializable {
 	}
 	public void setEnd_date(Date end_date) {
 		this.end_date = end_date;
+	}
+	public Level getLevel() {
+		return level;
+	}
+	public void setLevel(Level level) {
+		this.level = level;
+	}
+	public Student getStudent() {
+		return student;
+	}
+	public void setStudent(Student student) {
+		this.student = student;
 	}
 	
 	

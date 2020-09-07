@@ -26,8 +26,7 @@ public class Student implements Serializable{
 	private String Address;
 	private String gender;
 	
-@OneToOne
-	
+	@OneToOne
 	private Student_enrolment student_enrolment;
 	
 	public Student() {

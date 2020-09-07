@@ -1,12 +1,16 @@
 package com.best.bright.onile_course.model;
 
 import java.io.Serializable;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 @Entity
 public class Level implements Serializable {
@@ -18,17 +22,21 @@ public class Level implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long level_id;
-	private int course_id;
 	private String level_name;
 	
 	@ManyToOne
+	@JoinColumn(name="course_id")
 	private Course course;
 
 	@OneToOne
-	
 	private Student_enrolment student_enrolment;
 	
-	public Level() {}
+	@OneToMany(mappedBy = "level")
+	private Set<Level_vedio> Level_vedio_list;
+	
+	public Level() {
+		
+	}
 	
 	
 	public Long getLevel_id() {
@@ -40,18 +48,21 @@ public class Level implements Serializable {
 		this.level_id = level_id;
 	}
 
-
-	public int getCourse_id() {
-		return course_id;
-	}
-	public void setCourse_id(int course_id) {
-		this.course_id = course_id;
-	}
 	public String getLevel_name() {
 		return level_name;
 	}
 	public void setLevel_name(String level_name) {
 		this.level_name = level_name;
+	}
+
+
+	public Course getCourse() {
+		return course;
+	}
+
+
+	public void setCourse(Course course) {
+		this.course = course;
 	}
 	
 	
